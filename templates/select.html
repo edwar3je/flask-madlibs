@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Select your template{% endblock %} 
+
+{% block content %}
+<h1>Welcome to Madlibs! Select your story template.</h1>
+<form action="/form">
+    <select name="title">
+        {% for story in all_stories %}
+        <option value="{{ story }}">{{ story }}</option>
+        {% endfor %}
+    </select>
+    <button>Submit</button>
+</form>
+{% endblock %}
